@@ -7,4 +7,16 @@ function getComputerChoice() {
     let hand = (choice == 1) ? "rock":(choice ==2) ? "paper":"scissors";
     return hand;
 }
-console.log(getComputerChoice());
+//console.log(getComputerChoice());
+function getPlayerChoice() {
+    let hand = prompt("Enter 'rock', 'paper', or 'scissors'");
+    if (hand == null) {
+        return null
+    }
+    hand = hand.toLowerCase();
+    if (!((hand == "rock") || (hand == "paper") || (hand == "scissors"))) {
+        alert("Wrong selection. Try again.")
+        return getPlayerChoice();
+    }
+    return hand;
+}
